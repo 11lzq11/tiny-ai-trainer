@@ -1,0 +1,24 @@
+# Gradle / Android
+.gradle/
+local.properties
+*.iml
+.idea/
+build/
+app/build/
+**/build/
+
+# NDK / CMake generated
+app/.cxx/
+**/.cxx/
+
+# Keystores (never commit signing keys)
+*.jks
+*.keystore
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local brain checkpoints (large, user-generated)
+*.brain
+!app/src/main/assets/base.brain

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TinyTrainer</string>
+
+    <!-- Tabs -->
+    <string name="tab_train">训练</string>
+    <string name="tab_chat">对话</string>
+    <string name="tab_brain">大脑</string>
+
+    <!-- Training page -->
+    <string name="train_corpus_title">语料</string>
+    <string name="train_corpus_hint">在这里粘贴文本，作为训练语料…</string>
+    <string name="train_corpus_name_hint">语料名称（可选）</string>
+    <string name="train_add_corpus">添加语料</string>
+    <string name="train_import_txt">导入 .txt 文件</string>
+    <string name="train_corpus_empty">还没有语料。粘贴文本或导入 .txt 文件。</string>
+    <string name="train_hparams_title">超参数</string>
+    <string name="train_lr">学习率</string>
+    <string name="train_batch">Batch 大小</string>
+    <string name="train_block">序列长度</string>
+    <string name="train_layers">层数</string>
+    <string name="train_embd">隐藏层维度</string>
+    <string name="train_heads">注意力头数</string>
+    <string name="train_vocab">词表大小</string>
+    <string name="train_warmup">Warmup 步数</string>
+    <string name="train_wd">权重衰减</string>
+    <string name="train_start">开始训练</string>
+    <string name="train_pause">暂停</string>
+    <string name="train_resume">继续</string>
+    <string name="train_stop">停止</string>
+    <string name="train_step">Step</string>
+    <string name="train_loss">LOSS</string>
+    <string name="train_tps">tokens/s</string>
+    <string name="train_elapsed">已用时间</string>
+    <string name="train_status_idle">未开始</string>
+    <string name="train_status_running">训练中…</string>
+    <string name="train_status_paused">已暂停</string>
+    <string name="train_status_done">已停止</string>
+    <string name="train_need_corpus">请先添加至少一份语料并勾选启用</string>
+    <string name="train_need_brain">请先在「大脑」页新建大脑，或直接开始训练（会自动新建）</string>
+    <string name="train_bad_params">超参数超出范围，请检查：学习率 1e-5~1e-2；batch 1~128；序列 64~256；层数 1~6；隐藏层 64~384；头数 2~8 且整除隐藏层；词表 500~8000；warmup 0~5000；权重衰减 0~0.5</string>
+    <string name="train_saved">已自动保存大脑</string>
+    <string name="train_started">训练已开始（后台继续，锁屏也不停）</string>
+    <string name="train_stopped">训练已停止，大脑已保存</string>
+
+    <!-- Chat page -->
+    <string name="chat_prompt_hint">输入开头（prompt），让大脑接着写…</string>
+    <string name="chat_temperature">温度 Temperature</string>
+    <string name="chat_topk">Top-K（0 = 不限制）</string>
+    <string name="chat_max_tokens">生成长度</string>
+    <string name="chat_generate">生成</string>
+    <string name="chat_no_brain">还没有大脑，请先去「训练」页开始训练，或去「大脑」页新建/导入</string>
+    <string name="chat_generating">生成中…</string>
+    <string name="chat_empty_prompt">请先输入 prompt</string>
+
+    <!-- Brain page -->
+    <string name="brain_title">当前大脑</string>
+    <string name="brain_none">还没有大脑</string>
+    <string name="brain_step">步数</string>
+    <string name="brain_params">参数量</string>
+    <string name="brain_vocab">词表大小</string>
+    <string name="brain_arch">结构</string>
+    <string name="brain_loss">最近 LOSS</string>
+    <string name="brain_export">导出大脑 (.brain)</string>
+    <string name="brain_import">导入大脑 (.brain)</string>
+    <string name="brain_new">新建大脑（随机初始化）</string>
+    <string name="brain_load_base">加载内置底座大脑</string>
+    <string name="brain_exported">大脑已导出</string>
+    <string name="brain_imported">大脑已导入</string>
+    <string name="brain_created">已新建大脑（随机初始化）</string>
+    <string name="brain_base_missing">内置底座大脑尚未提供（当前是占位文件），请先新建大脑或导入已有的 .brain</string>
+    <string name="brain_base_loaded">底座大脑已加载</string>
+    <string name="brain_load_failed">加载大脑失败：文件可能损坏或版本不匹配</string>
+    <string name="brain_new_confirm">新建大脑会丢弃当前大脑的全部训练进度（除非你已导出）。确定新建吗？</string>
+    <string name="dialog_confirm">确定</string>
+    <string name="dialog_cancel">取消</string>
+
+    <!-- Misc -->
+    <string name="notif_channel_name">训练</string>
+    <string name="notif_channel_desc">训练进行中的状态通知</string>
+    <string name="notif_training">训练中 · Step %1$d · loss %2$.3f</string>
+    <string name="notif_paused">训练已暂停 · Step %1$d</string>
+    <string name="error_native">引擎加载失败：%1$s</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Exported .brain files are staged in cache/ before sharing. -->
+    <cache-path name="shared_brain" path="shared/" />
+</paths>

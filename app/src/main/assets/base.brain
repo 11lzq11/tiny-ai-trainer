@@ -1,0 +1,10 @@
+PLACEHOLDER — not a real .brain file.
+
+This file is a placeholder for the pre-trained base brain. It will be
+replaced by a real .brain file (magic "TBRN", trained on a few MB of clean
+Chinese text) before the first release. The app checks the magic bytes and
+shows "base brain not provided yet" if this placeholder is still here.
+
+占位文件——不是真正的大脑。首版发布前会被替换为预训练好的 .brain
+（魔数 "TBRN"，用几 MB 干净中文语料训出的底座）。应用会检查魔数，
+如果是占位文件，会提示“底座大脑尚未提供”。
