@@ -20,10 +20,11 @@ jobs:
           distribution: temurin
           java-version: "17"
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
       - name: Install SDK packages
+        # NOTE: the ubuntu runner already ships the Android SDK
+        # (ANDROID_HOME + sdkmanager on PATH). Do NOT use
+        # android-actions/setup-android here: it tries to install the
+        # long-removed 'tools' package and fails sdkmanager.
         run: |
           yes | sdkmanager "platforms;android-34" "build-tools;34.0.0" "ndk;26.1.10909125" "cmake;3.22.1"
 
