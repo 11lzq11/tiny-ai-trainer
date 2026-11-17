@@ -22,11 +22,17 @@ jobs:
 
       - name: Install SDK packages
         # NOTE: the ubuntu runner already ships the Android SDK
-        # (ANDROID_HOME + sdkmanager on PATH). Do NOT use
-        # android-actions/setup-android here: it tries to install the
-        # long-removed 'tools' package and fails sdkmanager.
+        # (ANDROID_HOME + sdkmanager on disk) but sdkmanager is NOT on
+        # PATH, and cmdline-tools may be versioned (e.g. 16.0) with no
+        # 'latest' link. Do NOT use android-actions/setup-android here:
+        # it tries to install the long-removed 'tools' package and
+        # fails sdkmanager.
         run: |
-          yes | sdkmanager "platforms;android-34" "build-tools;34.0.0" "ndk;26.1.10909125" "cmake;3.22.1"
+          export ANDROID_HOME="${ANDROID_HOME:-/usr/local/lib/android/sdk}"
+          SDKMGR="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          [ -x "$SDKMGR" ] || SDKMGR=$(ls "$ANDROID_HOME"/cmdline-tools/*/bin/sdkmanager 2>/dev/null | sort -V | tail -1)
+          echo "using sdkmanager: $SDKMGR"
+          yes | "$SDKMGR" "platforms;android-34" "build-tools;34.0.0" "ndk;26.1.10909125" "cmake;3.22.1"
 
       - name: Set up Gradle 8.7
         uses: gradle/actions/setup-gradle@v3
