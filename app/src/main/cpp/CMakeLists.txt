@@ -69,8 +69,13 @@ target_compile_options(tinytrainer PRIVATE
     -fopenmp
 )
 
+# -fopenmp must ALSO be a link option: it is what makes Clang link the
+# OpenMP runtime (libomp) at all. -static-openmp alone only says "when
+# you link OpenMP, use the static lib" — without -fopenmp at link time
+# nothing is linked and the __kmpc_* symbols stay undefined (this broke
+# CI: ld.lld "undefined symbol: __kmpc_global_thread_num" etc.).
 # Statically link the OpenMP runtime so the .so has no extra .so dependency.
-target_link_options(tinytrainer PRIVATE -static-openmp)
+target_link_options(tinytrainer PRIVATE -fopenmp -static-openmp)
 
 find_library(log-lib log)
 
